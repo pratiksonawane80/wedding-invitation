@@ -1,0 +1,124 @@
+"use client";
+import { motion } from "framer-motion";
+import { weddingData } from "@/lib/data";
+
+export default function EventsSection() {
+  return (
+    <section
+      className="section-container min-h-screen py-20"
+      id="events"
+      style={{
+        background:
+          "linear-gradient(180deg, #FFFDF7 0%, #F0F4F0 50%, #FFFDF7 100%)",
+      }}
+    >
+      <motion.div
+        className="max-w-2xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+          Wedding Events
+        </h2>
+        <div className="gold-divider" />
+        <p className="font-body text-lg text-gold-600/70 mt-4">
+          Join us across these special celebrations
+        </p>
+      </motion.div>
+
+      <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        {weddingData.events.map((event, index) => (
+          <motion.div
+            key={index}
+            className="glass-card p-6 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+          >
+            {/* Emoji */}
+            <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
+              {event.emoji}
+            </div>
+
+            {/* Event Name */}
+            <h3 className="font-heading text-2xl font-semibold text-gold-800 mb-3">
+              {event.name}
+            </h3>
+
+            {/* Gold line */}
+            <div className="gold-divider mb-4" />
+
+            {/* Details */}
+            <div className="space-y-2 font-body text-gold-700/80">
+              <p className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-gold-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                {event.date}
+              </p>
+              <p className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-gold-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                {event.time}
+              </p>
+              <p className="flex items-center justify-center gap-2 text-sm">
+                <svg
+                  className="w-4 h-4 text-gold-500 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                {event.venue}
+              </p>
+            </div>
+
+            <p className="font-body text-sm text-gold-600/60 mt-4 italic">
+              {event.description}
+            </p>
+
+            {/* Map link */}
+            {/* <a
+              href={event.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 mt-4 px-4 py-2 rounded-full text-sm font-heading text-gold-700 bg-gold-100/80 hover:bg-gold-200 transition-colors duration-300"
+            >
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+              View on Map
+            </a> */}
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
