@@ -90,7 +90,7 @@ export const weddingData = {
     {
       name: "Wedding Ceremony",
       date: "May 1, 2026",
-      time: "9:00 AM – 2:00 PM",
+      time: "12:25 PM – 1:25 PM",
       venue: "Main Lawn, Hyatt Place",
       description:
         "The sacred ceremony where two hearts become one. Your presence will make it even more special.",
