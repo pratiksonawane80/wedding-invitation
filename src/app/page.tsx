@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LandingScreen from "@/components/LandingScreen";
 import FloatingPetals from "@/components/FloatingPetals";
-import MusicPlayer from "@/components/MusicPlayer";
+import ScrollMusicPlayer from "@/components/ScrollMusicPlayer";
 import WelcomeSection from "@/components/WelcomeSection";
 import LoveStory from "@/components/LoveStory";
 import EventsSection from "@/components/EventsSection";
@@ -44,7 +44,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <FloatingPetals />
-          <MusicPlayer />
+          <ScrollMusicPlayer />
 
           {/* Navigation dots */}
           <nav className="fixed right-3 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3">
