@@ -12,15 +12,32 @@ export default function RSVPSection() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call — replace with your backend/Google Sheets endpoint
-    await new Promise((r) => setTimeout(r, 1500));
-    console.log("RSVP Data:", formData);
-    setSubmitted(true);
-    setLoading(false);
+    setError("");
+
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,6 +89,12 @@ export default function RSVPSection() {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-body">
+                {error}
+              </div>
+            )}
+
             <div>
               <label className="font-heading text-sm text-gold-700 mb-1 block">
                 Your Name *
@@ -144,7 +167,9 @@ export default function RSVPSection() {
                         : "bg-gold-50 text-gold-600 hover:bg-gold-100"
                     }`}
                   >
-                    {val === "yes" ? "🎉 Joyfully Accept" : "😢 Regretfully Decline"}
+                    {val === "yes"
+                      ? "🎉 Joyfully Accept"
+                      : "😢 Regretfully Decline"}
                   </button>
                 ))}
               </div>
