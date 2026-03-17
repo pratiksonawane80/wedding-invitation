@@ -99,8 +99,8 @@ export const weddingData = {
     }
   ],
   venue: {
-    name: "Hyatt Place",
-    address: "Jalna Road, Aurangabad, Maharashtra 431001",
+    name: "Hyatt Place, ",
+    address: "Jalna Road, Chhatrapati Sambhajinagar, Maharashtra 431001",
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.1971150614877!2d75.39191957486914!3d19.873896881501967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3133289acc9%3A0x48bd65029a60a2f!2sHyatt%20Place%20Aurangabad%20Airport!5e0!3m2!1sen!2sin!4v1773684823029!5m2!1sen!2sin",
     mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
