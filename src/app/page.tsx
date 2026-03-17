@@ -44,7 +44,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <FloatingPetals />
-          <ScrollMusicPlayer />
+          {/* <ScrollMusicPlayer /> */}
 
           {/* Navigation dots */}
           <nav className="fixed right-3 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3">
