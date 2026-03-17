@@ -50,13 +50,13 @@ export default function Home() {
           <nav className="fixed right-3 top-1/2 -translate-y-1/2 z-50 hidden sm:flex flex-col gap-3">
             {[
               { id: "welcome", label: "Welcome" },
-              { id: "love-story", label: "Our Story" },
+              // { id: "love-story", label: "Our Story" },
               { id: "events", label: "Events" },
               { id: "venue", label: "Venue" },
-              { id: "gallery", label: "Gallery" },
+              // { id: "gallery", label: "Gallery" },
               { id: "countdown", label: "Countdown" },
               { id: "rsvp", label: "RSVP" },
-              { id: "share", label: "Share" },
+              // { id: "share", label: "Share" },
             ].map((item) => (
               <a
                 key={item.id}
@@ -77,9 +77,9 @@ export default function Home() {
           <CountdownSection />
           <EventsSection />
           <VenueSection />
-          <GallerySection />
+          {/* <GallerySection /> */}
           <RSVPSection />
-          <ShareSection />
+          {/* <ShareSection /> */}
           <FooterSection />
         </motion.div>
       )}

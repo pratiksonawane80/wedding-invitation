@@ -55,7 +55,7 @@ export const weddingData = {
       description:
         "A special evening where we exchange rings and celebrate the promise of a lifetime together with our loved ones.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
-      emoji: "💖",
+      emoji: "💍",
     },
     {
       name: "Haldi",
@@ -95,7 +95,7 @@ export const weddingData = {
       description:
         "The sacred ceremony where two hearts become one. Your presence will make it even more special.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
-      emoji: "💍",
+      emoji: "💖",
     }
   ],
   venue: {
@@ -106,11 +106,7 @@ export const weddingData = {
     mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
   },
   gallery: [
-    { id: 1, alt: "Engagement Ceremony" },
     { id: 2, alt: "Pre-wedding Shoot" },
-    { id: 3, alt: "Fun Moments" },
-    { id: 4, alt: "Together Forever" },
-    { id: 5, alt: "Ring Ceremony" },
     { id: 6, alt: "Family Blessings" },
   ],
   shareUrl: "https://wedding-invitation-kappa-ebon.vercel.app",
