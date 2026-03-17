@@ -32,7 +32,7 @@ export default function FloatingPetals() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden transition-opacity duration-1000 dark:opacity-30">
       {petals.map((p) => (
         <div
           key={p.id}

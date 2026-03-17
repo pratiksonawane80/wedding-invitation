@@ -5,13 +5,20 @@ import { weddingData } from "@/lib/data";
 export default function LoveStory() {
   return (
     <section
-      className="section-container min-h-screen py-20"
+      className="section-container min-h-screen py-20 transition-colors duration-500 bg-cream-50 dark:bg-neutral-900"
       id="love-story"
       style={{
-        background:
-          "linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%)",
+        background: "var(--love-story-bg, linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%))",
       }}
     >
+      <style jsx>{`
+        section {
+          --love-story-bg: linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%);
+        }
+        :global(.dark) section {
+          --love-story-bg: linear-gradient(180deg, #0a0a0a 0%, #171717 50%, #0a0a0a 100%);
+        }
+      `}</style>
       <motion.div
         className="max-w-2xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -19,7 +26,7 @@ export default function LoveStory() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Our Love Story
         </h2>
         <div className="gold-divider" />
@@ -42,7 +49,7 @@ export default function LoveStory() {
             transition={{ duration: 0.7, delay: index * 0.15 }}
           >
             {/* Timeline dot */}
-            <div className="absolute left-6 sm:left-1/2 w-3 h-3 rounded-full bg-gold-500 border-4 border-cream-50 transform -translate-x-1.5 sm:-translate-x-1.5 mt-6 z-10 shadow-md" />
+            <div className="absolute left-6 sm:left-1/2 w-3 h-3 rounded-full bg-gold-500 border-4 border-cream-50 dark:border-neutral-900 transform -translate-x-1.5 sm:-translate-x-1.5 mt-6 z-10 shadow-md" />
 
             {/* Card */}
             <div
@@ -51,13 +58,13 @@ export default function LoveStory() {
               }`}
             >
               <div className="glass-card p-6 hover:shadow-lg transition-shadow duration-300">
-                <span className="inline-block px-3 py-1 rounded-full bg-gold-100 text-gold-700 font-heading text-sm font-semibold mb-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-gold-100 dark:bg-gold-900/40 text-gold-700 dark:text-gold-300 font-heading text-sm font-semibold mb-3">
                   {item.year}
                 </span>
-                <h3 className="font-heading text-xl font-semibold text-gold-800 mb-2">
+                <h3 className="font-heading text-xl font-semibold text-gold-800 dark:text-gold-100 mb-2">
                   {item.title}
                 </h3>
-                <p className="font-body text-gold-700/70 leading-relaxed">
+                <p className="font-body text-gold-700/70 dark:text-gold-200/70 leading-relaxed">
                   {item.description}
                 </p>
               </div>

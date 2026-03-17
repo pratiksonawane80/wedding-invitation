@@ -53,13 +53,20 @@ export default function CountdownSection() {
 
   return (
     <section
-      className="section-container py-16 sm:py-20 px-4"
+      className="section-container py-16 sm:py-20 px-4 transition-colors duration-500 bg-cream-50 dark:bg-neutral-950"
       id="countdown"
       style={{
-        background:
-          "linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%)",
+        background: "var(--countdown-bg, linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%))",
       }}
     >
+      <style jsx>{`
+        section {
+          --countdown-bg: linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%);
+        }
+        :global(.dark) section {
+          --countdown-bg: linear-gradient(180deg, #0a0a0a 0%, #1a1a0a 50%, #0a0a0a 100%);
+        }
+      `}</style>
       <motion.div
         className="max-w-2xl mx-auto text-center w-full"
         initial={{ opacity: 0, y: 30 }}
@@ -67,11 +74,11 @@ export default function CountdownSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-4xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-4xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Counting Down
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-base sm:text-lg text-gold-600/70 mt-4 mb-8 sm:mb-12">
+        <p className="font-body text-base sm:text-lg text-gold-600/70 dark:text-gold-200/70 mt-4 mb-8 sm:mb-12">
           Until we say &ldquo;I Do&rdquo;
         </p>
 
@@ -85,12 +92,12 @@ export default function CountdownSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <span className="font-heading text-2xl sm:text-5xl font-bold text-gold-700">
+              <span className="font-heading text-2xl sm:text-5xl font-bold text-gold-700 dark:text-gold-300">
                 {mounted
                   ? String(unit.value).padStart(2, "0")
                   : "--"}
               </span>
-              <span className="font-body text-[10px] sm:text-sm text-gold-500 uppercase tracking-wider mt-1">
+              <span className="font-body text-[10px] sm:text-sm text-gold-500 dark:text-gold-400 mt-1 uppercase tracking-wider">
                 {unit.label}
               </span>
             </motion.div>
@@ -98,7 +105,7 @@ export default function CountdownSection() {
         </div>
 
         <motion.p
-          className="font-heading text-base sm:text-xl text-gold-600 mt-8 sm:mt-10 italic"
+          className="font-heading text-base sm:text-xl text-gold-600 dark:text-gold-300 mt-8 sm:mt-10 italic"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

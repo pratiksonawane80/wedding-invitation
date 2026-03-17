@@ -64,10 +64,10 @@ export default function Home() {
                 className="group flex items-center gap-2"
                 title={item.label}
               >
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-heading text-gold-600 bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-heading text-gold-600 dark:text-gold-300 bg-white/80 dark:bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm">
                   {item.label}
                 </span>
-                <span className="block w-2.5 h-2.5 rounded-full bg-gold-300/50 group-hover:bg-gold-500 group-hover:scale-150 transition-all duration-300 border border-gold-400/30" />
+                <span className="block w-2.5 h-2.5 rounded-full bg-gold-300/50 dark:bg-gold-500/30 group-hover:bg-gold-500 dark:group-hover:bg-gold-400 group-hover:scale-150 transition-all duration-300 border border-gold-400/30" />
               </a>
             ))}
           </nav>

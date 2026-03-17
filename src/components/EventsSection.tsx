@@ -5,13 +5,20 @@ import { weddingData } from "@/lib/data";
 export default function EventsSection() {
   return (
     <section
-      className="section-container min-h-screen py-20"
+      className="section-container min-h-screen py-20 transition-colors duration-500 bg-cream-50 dark:bg-neutral-950"
       id="events"
       style={{
-        background:
-          "linear-gradient(180deg, #FFFDF7 0%, #F0F4F0 50%, #FFFDF7 100%)",
+        background: "var(--events-bg, linear-gradient(180deg, #FFFDF7 0%, #F0F4F0 50%, #FFFDF7 100%))",
       }}
     >
+      <style jsx>{`
+        section {
+          --events-bg: linear-gradient(180deg, #FFFDF7 0%, #F0F4F0 50%, #FFFDF7 100%);
+        }
+        :global(.dark) section {
+          --events-bg: linear-gradient(180deg, #0a0a0a 0%, #111811 50%, #0a0a0a 100%);
+        }
+      `}</style>
       <motion.div
         className="max-w-2xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -19,11 +26,11 @@ export default function EventsSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Wedding Events
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-lg text-gold-600/70 mt-4">
+        <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mt-4">
           Join us across these special celebrations
         </p>
       </motion.div>
@@ -44,7 +51,7 @@ export default function EventsSection() {
             </div>
 
             {/* Event Name */}
-            <h3 className="font-heading text-2xl font-semibold text-gold-800 mb-3">
+            <h3 className="font-heading text-2xl font-semibold text-gold-800 dark:text-gold-100 mb-3">
               {event.name}
             </h3>
 
@@ -52,7 +59,7 @@ export default function EventsSection() {
             <div className="gold-divider mb-4" />
 
             {/* Details */}
-            <div className="space-y-2 font-body text-gold-700/80">
+            <div className="space-y-2 font-body text-gold-700/80 dark:text-gold-200/80">
               <p className="flex items-center justify-center gap-2">
                 <svg
                   className="w-4 h-4 text-gold-500"
@@ -94,7 +101,7 @@ export default function EventsSection() {
               </p>
             </div>
 
-            <p className="font-body text-sm text-gold-600/60 mt-4 italic">
+            <p className="font-body text-sm text-gold-600/60 dark:text-gold-300/60 mt-4 italic">
               {event.description}
             </p>
 

@@ -111,13 +111,21 @@ export default function FooterSection() {
   }, [animate, createFirework]);
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden" id="footer">
+    <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden transition-colors duration-500" id="footer">
       {/* Fireworks canvas */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ background: "linear-gradient(180deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%)" }}
+        style={{ background: "var(--footer-bg, linear-gradient(180deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%))" }}
       />
+      <style jsx>{`
+        canvas {
+          --footer-bg: linear-gradient(180deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        :global(.dark) canvas {
+          --footer-bg: linear-gradient(180deg, #050505 0%, #0a0a0a 50%, #000000 100%);
+        }
+      `}</style>
 
       {/* Content */}
       <motion.div
@@ -127,13 +135,13 @@ export default function FooterSection() {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <h2 className="font-display text-5xl sm:text-7xl text-gold-300 mb-4">
+        <h2 className="font-display text-5xl sm:text-7xl text-gold-300 dark:text-gold-200 mb-4 drop-shadow-lg">
           {weddingData.couple.man} & {weddingData.couple.woman}
         </h2>
         <p className="font-heading text-xl text-gold-200/70 italic mb-2">
           {weddingData.couple.tagline}
         </p>
-        <p className="font-body text-gold-300/50 tracking-widest uppercase text-sm">
+        <p className="font-body text-gold-300/50 dark:text-gold-400/50 tracking-widest uppercase text-sm">
           May 1, 2026
         </p>
 

@@ -201,13 +201,20 @@ export default function ScrollMusicPlayer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="fixed bottom-20 right-4 z-50 px-4 py-2 rounded-full text-sm font-heading text-gold-800 shadow-lg"
+            className="fixed bottom-20 right-4 z-50 px-4 py-2 rounded-full text-sm font-heading text-gold-800 dark:text-gold-200 shadow-lg border border-gold/30 dark:border-gold/20"
             style={{
-              background: "rgba(255, 253, 247, 0.9)",
+              background: "var(--toast-bg, rgba(255, 253, 247, 0.9))",
               backdropFilter: "blur(12px)",
-              border: "1px solid rgba(212, 160, 23, 0.3)",
             }}
           >
+            <style jsx>{`
+              div {
+                --toast-bg: rgba(255, 253, 247, 0.9);
+              }
+              :global(.dark) div {
+                --toast-bg: rgba(15, 15, 15, 0.9);
+              }
+            `}</style>
             {toastLabel}
           </motion.div>
         )}

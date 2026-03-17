@@ -11,6 +11,16 @@
   --color-blush: #fecdd3;
   --color-sage: #a8c5a8;
   --color-deep-maroon: #5c0a1a;
+  --color-dark-bg: #0a0a0a;
+  --color-dark-card: #151515;
+  --color-dark-text: #f3f4f6;
+  --color-dark-muted: #9ca3af;
+  --landing-bg: linear-gradient(135deg, #FFF9E6 0%, #FFF5F5 30%, #FFFDF7 60%, #F0F4F0 100%);
+}
+
+.dark {
+  --color-cream: var(--color-dark-bg);
+  --landing-bg: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 }
 
 * {
@@ -31,6 +41,22 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark body {
+  color: var(--color-dark-text);
+  background-color: var(--color-dark-bg);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: white;
+}
+
+.dark ::selection {
+  background-color: var(--color-gold-light);
+  color: black;
 }
 
 /* Custom scrollbar */
@@ -40,9 +66,16 @@ body {
 ::-webkit-scrollbar-track {
   background: #fff9e6;
 }
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold);
   border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-color: #0a0a0a;
 }
 
 /* Section styling */
@@ -61,6 +94,16 @@ body {
     transparent
   );
   margin: 1rem auto;
+  transition: background 0.5s ease;
+}
+
+.dark .gold-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffcc1a,
+    transparent
+  );
 }
 
 /* Mandala decoration */
@@ -72,6 +115,10 @@ body {
   opacity: 0.08;
 }
 
+.dark .mandala-border {
+  opacity: 0.15;
+}
+
 /* Glass card */
 .glass-card {
   background: rgba(255, 253, 247, 0.7);
@@ -79,6 +126,13 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 160, 23, 0.2);
   border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.dark .glass-card {
+  background: rgba(10, 10, 10, 0.7);
+  border-color: rgba(212, 160, 23, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Petal falling animation */
@@ -116,6 +170,13 @@ body {
   background: linear-gradient(135deg, #d4a017, #b8860b);
   border: 2px solid rgba(255, 240, 179, 0.5);
 }
+
+.dark .music-btn {
+  background: linear-gradient(135deg, #8b6914, #5e4a1d);
+  border-color: rgba(212, 160, 23, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
 .music-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(212, 160, 23, 0.5);
@@ -126,6 +187,12 @@ body {
   @apply w-full px-4 py-3 rounded-xl border transition-all duration-300 font-body text-lg bg-white/50;
   border-color: rgba(212, 160, 23, 0.3);
 }
+
+.dark .rsvp-input {
+  @apply bg-black/30 text-white;
+  border-color: rgba(212, 160, 23, 0.4);
+}
+
 .rsvp-input:focus {
   outline: none;
   border-color: var(--color-gold);
@@ -141,6 +208,12 @@ body {
   background: rgba(255, 253, 247, 0.8);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 160, 23, 0.25);
+  transition: all 0.5s ease;
+}
+
+.dark .countdown-box {
+  background: rgba(21, 21, 21, 0.9);
+  border-color: rgba(212, 160, 23, 0.4);
 }
 
 /* Lightbox overlay */

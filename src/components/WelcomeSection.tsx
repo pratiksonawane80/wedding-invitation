@@ -4,7 +4,7 @@ import { weddingData } from "@/lib/data";
 
 export default function WelcomeSection() {
   return (
-    <section className="section-container bg-cream-50" id="welcome">
+    <section className="section-container bg-cream-50 dark:bg-neutral-950 transition-colors duration-500" id="welcome">
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
 
@@ -25,12 +25,12 @@ export default function WelcomeSection() {
           🙏
         </motion.div>
 
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Welcome
         </h2>
         <div className="gold-divider" />
 
-        <p className="font-body text-xl sm:text-2xl text-gold-800/80 leading-relaxed mt-8 px-4">
+        <p className="font-body text-xl sm:text-2xl text-gold-800/80 dark:text-gold-100/90 leading-relaxed mt-8 px-4">
           {weddingData.welcomeMessage}
         </p>
 
@@ -42,19 +42,19 @@ export default function WelcomeSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <div className="text-center">
-            <p className="font-display text-3xl text-gold-600">
+            <p className="font-display text-3xl text-gold-600 dark:text-gold-300">
               {weddingData.couple.man}
             </p>
-            <p className="font-body text-sm text-gold-500/70 mt-1">
+            <p className="font-body text-sm text-gold-500/70 dark:text-gold-400/70 mt-1">
               {weddingData.couple.manParents}
             </p>
           </div>
           <div className="font-display text-4xl text-gold-400">&</div>
           <div className="text-center">
-            <p className="font-display text-3xl text-gold-600">
+            <p className="font-display text-3xl text-gold-600 dark:text-gold-300">
               {weddingData.couple.woman}
             </p>
-            <p className="font-body text-sm text-gold-500/70 mt-1">
+            <p className="font-body text-sm text-gold-500/70 dark:text-gold-400/70 mt-1">
               {weddingData.couple.womanParents}
             </p>
           </div>

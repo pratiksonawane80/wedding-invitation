@@ -10,17 +10,18 @@ interface LandingScreenProps {
 export default function LandingScreen({ onOpen }: LandingScreenProps) {
   return (
     <motion.section
-      className="fixed inset-0 z-[60] flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[60] flex items-center justify-center overflow-hidden transition-colors duration-500 bg-cream-50 dark:bg-neutral-950"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       style={{
-        background:
-          "linear-gradient(135deg, #FFF9E6 0%, #FFF5F5 30%, #FFFDF7 60%, #F0F4F0 100%)",
+        background: "var(--landing-bg)",
       }}
     >
       {/* Mandala decorations */}
-      <div className="absolute top-[-80px] left-[-80px]">
+      <div className="absolute top-[-80px] left-[-80px] dark:opacity-40">
         <MandalaDecoration size={350} />
       </div>
-      <div className="absolute bottom-[-80px] right-[-80px]">
+      <div className="absolute bottom-[-80px] right-[-80px] dark:opacity-40">
         <MandalaDecoration size={350} />
       </div>
 

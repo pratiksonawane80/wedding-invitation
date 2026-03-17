@@ -42,13 +42,20 @@ export default function RSVPSection() {
 
   return (
     <section
-      className="section-container min-h-screen py-20"
+      className="section-container min-h-screen py-20 transition-colors duration-500 bg-cream-50 dark:bg-neutral-950"
       id="rsvp"
       style={{
-        background:
-          "linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%)",
+        background: "var(--rsvp-bg, linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%))",
       }}
     >
+      <style jsx>{`
+        section {
+          --rsvp-bg: linear-gradient(180deg, #FFFDF7 0%, #FFF5F5 50%, #FFFDF7 100%);
+        }
+        :global(.dark) section {
+          --rsvp-bg: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+        }
+      `}</style>
       <motion.div
         className="max-w-2xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -56,11 +63,11 @@ export default function RSVPSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           RSVP
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-lg text-gold-600/70 mt-4">
+        <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mt-4">
           Kindly let us know if you can make it
         </p>
       </motion.div>
@@ -79,10 +86,10 @@ export default function RSVPSection() {
             animate={{ scale: 1, opacity: 1 }}
           >
             <div className="text-6xl mb-4">💝</div>
-            <h3 className="font-heading text-2xl text-gold-700 mb-2">
+            <h3 className="font-heading text-2xl text-gold-700 dark:text-gold-200 mb-2">
               Thank You!
             </h3>
-            <p className="font-body text-gold-600/70">
+            <p className="font-body text-gold-600/70 dark:text-gold-200/70">
               We&apos;ve received your response. We can&apos;t wait to celebrate
               with you!
             </p>
@@ -90,19 +97,20 @@ export default function RSVPSection() {
         ) : (
           <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-body">
+              <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 px-4 py-3 rounded-xl text-sm font-body">
                 {error}
               </div>
             )}
 
             <div>
-              <label className="font-heading text-sm text-gold-700 mb-1 block">
+              <label className="font-heading text-sm text-gold-700 dark:text-gold-300 mb-1 block font-medium">
                 Your Name *
               </label>
               <input
                 type="text"
                 required
                 className="rsvp-input"
+                style={{ colorScheme: "dark" }}
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
@@ -113,13 +121,14 @@ export default function RSVPSection() {
             </div>
 
             <div>
-              <label className="font-heading text-sm text-gold-700 mb-1 block">
+              <label className="font-heading text-sm text-gold-700 dark:text-gold-300 mb-1 block font-medium">
                 Phone Number *
               </label>
               <input
                 type="tel"
                 required
                 className="rsvp-input"
+                style={{ colorScheme: "dark" }}
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
@@ -130,11 +139,15 @@ export default function RSVPSection() {
             </div>
 
             <div>
-              <label className="font-heading text-sm text-gold-700 mb-1 block">
+              <label className="font-heading text-sm text-gold-700 dark:text-gold-300 mb-1 block font-medium">
                 Number of Guests
               </label>
               <select
-                className="rsvp-input"
+                className="rsvp-input appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em]"
+                style={{ 
+                  colorScheme: "dark",
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4a017' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`
+                }}
                 value={formData.guests}
                 onChange={(e) =>
                   setFormData({ ...formData, guests: e.target.value })
@@ -142,7 +155,7 @@ export default function RSVPSection() {
                 id="rsvp-guests"
               >
                 {[1, 2, 3, 4, 5].map((n) => (
-                  <option key={n} value={n}>
+                  <option key={n} value={n} className="dark:bg-neutral-900">
                     {n} {n === 1 ? "Guest" : "Guests"}
                   </option>
                 ))}
@@ -150,7 +163,7 @@ export default function RSVPSection() {
             </div>
 
             <div>
-              <label className="font-heading text-sm text-gold-700 mb-2 block">
+              <label className="font-heading text-sm text-gold-700 dark:text-gold-300 mb-2 block font-medium">
                 Will you attend?
               </label>
               <div className="flex gap-4">
@@ -164,7 +177,7 @@ export default function RSVPSection() {
                     className={`flex-1 py-3 rounded-xl font-heading text-sm transition-all duration-300 ${
                       formData.attending === val
                         ? "bg-gold-500 text-white shadow-md"
-                        : "bg-gold-50 text-gold-600 hover:bg-gold-100"
+                        : "bg-gold-50 dark:bg-gold-900/20 text-gold-600 dark:text-gold-300 hover:bg-gold-100 dark:hover:bg-gold-900/30"
                     }`}
                   >
                     {val === "yes"
@@ -176,11 +189,12 @@ export default function RSVPSection() {
             </div>
 
             <div>
-              <label className="font-heading text-sm text-gold-700 mb-1 block">
+              <label className="font-heading text-sm text-gold-700 dark:text-gold-300 mb-1 block font-medium">
                 Message for the Couple
               </label>
               <textarea
                 className="rsvp-input min-h-[100px] resize-none"
+                style={{ colorScheme: "dark" }}
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })

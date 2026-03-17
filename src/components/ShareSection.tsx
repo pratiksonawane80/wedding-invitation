@@ -29,7 +29,7 @@ export default function ShareSection() {
   };
 
   return (
-    <section className="section-container py-20 bg-cream-50" id="share">
+    <section className="section-container py-20 bg-cream-50 dark:bg-neutral-950 transition-colors duration-500" id="share">
       <motion.div
         className="max-w-md mx-auto text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -37,11 +37,11 @@ export default function ShareSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Share the Joy
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-lg text-gold-600/70 mt-4 mb-10">
+        <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mt-4 mb-10">
           Spread the word about our special day
         </p>
 

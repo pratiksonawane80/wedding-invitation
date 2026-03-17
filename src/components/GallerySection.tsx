@@ -46,13 +46,20 @@ export default function GallerySection() {
 
   return (
     <section
-      className="section-container min-h-screen py-20"
+      className="section-container min-h-screen py-20 transition-colors duration-500 bg-cream-50 dark:bg-neutral-900"
       id="gallery"
       style={{
-        background:
-          "linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%)",
+        background: "var(--gallery-bg, linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%))",
       }}
     >
+      <style jsx>{`
+        section {
+          --gallery-bg: linear-gradient(180deg, #FFFDF7 0%, #FFF9E6 50%, #FFFDF7 100%);
+        }
+        :global(.dark) section {
+          --gallery-bg: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+      `}</style>
       <motion.div
         className="max-w-2xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -60,11 +67,11 @@ export default function GallerySection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           Our Gallery
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-lg text-gold-600/70 mt-4">
+        <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mt-4">
           Moments we treasure
         </p>
       </motion.div>

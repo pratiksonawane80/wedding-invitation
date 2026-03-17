@@ -4,7 +4,7 @@ import { weddingData } from "@/lib/data";
 
 export default function VenueSection() {
   return (
-    <section className="section-container min-h-screen py-20 bg-cream-50" id="venue">
+    <section className="section-container min-h-screen py-20 bg-cream-50 dark:bg-neutral-900 transition-colors duration-500" id="venue">
       <motion.div
         className="max-w-2xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -12,7 +12,7 @@ export default function VenueSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 mb-4">
+        <h2 className="font-display text-5xl sm:text-6xl text-gold-700 dark:text-gold-200 mb-4">
           The Venue
         </h2>
         <div className="gold-divider" />
@@ -27,7 +27,7 @@ export default function VenueSection() {
       >
         <div className="glass-card overflow-hidden">
           {/* Map */}
-          <div className="w-full h-64 sm:h-80 bg-sage-100 relative">
+          <div className="w-full h-64 sm:h-80 bg-sage-100 dark:bg-neutral-800 relative">
             <iframe
               src={weddingData.venue.mapEmbedUrl}
               width="100%"
@@ -42,10 +42,10 @@ export default function VenueSection() {
 
           {/* Details */}
           <div className="p-8 text-center">
-            <h3 className="font-heading text-3xl font-semibold text-gold-800 mb-2">
+            <h3 className="font-heading text-3xl font-semibold text-gold-800 dark:text-gold-100 mb-2">
               {weddingData.venue.name}
             </h3>
-            <p className="font-body text-lg text-gold-600/70 mb-6">
+            <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mb-6">
               {weddingData.venue.address}
             </p>
 
