@@ -42,7 +42,7 @@ export const weddingData = {
       name: "Mehendi",
       date: "April 29, 2026",
       time: "4:00 PM – 8:00 PM",
-      venue: "Poolside Garden, Hyatt Place",
+      venue: "Groom's Residence, Devanagri",
       description: "An evening of intricate henna art and delightful music.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
       emoji: "🌿",
@@ -61,7 +61,7 @@ export const weddingData = {
       name: "Haldi",
       date: "April 30, 2026",
       time: "08:30 PM – 10:00 PM",
-      venue: "Grand Ballroom, Hyatt Place",
+      venue: "Banquet Lawn, Hyatt Place",
       description:
         "Join us for a vibrant celebration of turmeric blessings and joy.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
@@ -81,7 +81,7 @@ export const weddingData = {
       name: "Saptapadi",
       date: "May 1, 2026",
       time: "07:30 AM – 10:00 AM",
-      venue: "Main Lawn, Hyatt Place",
+      venue: "Poolside Lawn, Hyatt Place",
       description:
         "The sacred ritual of seven vows taken around the holy fire, symbolizing love, commitment, and a lifelong journey together.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
@@ -91,7 +91,7 @@ export const weddingData = {
       name: "Wedding Ceremony",
       date: "May 1, 2026",
       time: "12:25 PM – 1:25 PM",
-      venue: "Main Lawn, Hyatt Place",
+      venue: "Grand Ballroom, Hyatt Place",
       description:
         "The sacred ceremony where two hearts become one. Your presence will make it even more special.",
       mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
@@ -99,8 +99,8 @@ export const weddingData = {
     }
   ],
   venue: {
-    name: "Hyatt Place",
-    address: "Jalna Road, Aurangabad, Maharashtra 431001",
+    name: "Hyatt Place, ",
+    address: "Jalna Road, Chhatrapati Sambhajinagar, Maharashtra 431001",
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.1971150614877!2d75.39191957486914!3d19.873896881501967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3133289acc9%3A0x48bd65029a60a2f!2sHyatt%20Place%20Aurangabad%20Airport!5e0!3m2!1sen!2sin!4v1773684823029!5m2!1sen!2sin",
     mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
@@ -113,6 +113,6 @@ export const weddingData = {
     { id: 5, alt: "Ring Ceremony" },
     { id: 6, alt: "Family Blessings" },
   ],
-  shareUrl: "https://pratik-weds-sneha.vercel.app",
+  shareUrl: "https://wedding-invitation-kappa-ebon.vercel.app",
   hashtag: "#PratikWedsSneha",
 };
