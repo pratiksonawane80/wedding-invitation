@@ -7,12 +7,32 @@ export default function MusicPlayer() {
 
   useEffect(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio("/until-song.mp3");
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.1;
+      const audio = new Audio("/until-song.mp3");
+      audio.loop = true;
+      audio.crossOrigin = "anonymous";
+      
+      // Standard volume (Works on Windows/Android/Mac Desktop, ignored on iOS)
+      audio.volume = 0.1;
+      audioRef.current = audio;
+
+      try {
+        // Enforce volume on ALL devices (including iOS) using Web Audio API
+        const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+        if (AudioContext) {
+          const audioCtx = new AudioContext();
+          const source = audioCtx.createMediaElementSource(audio);
+          const gainNode = audioCtx.createGain();
+          gainNode.gain.value = 0.1; // 10% volume
+          
+          source.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+        }
+      } catch (e) {
+        console.log("Web Audio API not supported or failed:", e);
+      }
 
       // Attempt to play immediately upon mounting (since they clicked the envelope button already)
-      audioRef.current.play().then(() => {
+      audio.play().then(() => {
         setIsPlaying(true);
       }).catch((err) => {
         console.log("Autoplay prevented:", err);
