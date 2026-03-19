@@ -10,9 +10,9 @@ export default function MusicPlayer() {
       const audio = new Audio("/until-song.mp3");
       audio.loop = true;
       audio.crossOrigin = "anonymous";
-      
+
       // Standard volume (Works on Windows/Android/Mac Desktop, ignored on iOS)
-      audio.volume = 0.1;
+      audio.volume = 0.3;
       audioRef.current = audio;
 
       try {
@@ -22,8 +22,8 @@ export default function MusicPlayer() {
           const audioCtx = new AudioContext();
           const source = audioCtx.createMediaElementSource(audio);
           const gainNode = audioCtx.createGain();
-          gainNode.gain.value = 0.1; // 10% volume
-          
+          gainNode.gain.value = 0.3; // 30% volume
+
           source.connect(gainNode);
           gainNode.connect(audioCtx.destination);
         }
