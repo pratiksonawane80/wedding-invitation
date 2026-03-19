@@ -36,29 +36,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/*
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const savedTheme = localStorage.getItem('theme');
-                  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  const theme = savedTheme || systemTheme;
-                  if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {
-                  console.error('Failed to set theme:', e);
-                }
-              })()
-            `,
+             __html: `
+               (function() {
+                 try {
+                   const savedTheme = localStorage.getItem('theme');
+                   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                   const theme = savedTheme || systemTheme;
+                   if (theme === 'dark') {
+                     document.documentElement.classList.add('dark');
+                   } else {
+                     document.documentElement.classList.remove('dark');
+                   }
+                 } catch (e) {
+                   console.error('Failed to set theme:', e);
+                 }
+               })()
+             `,
           }}
         />
+        */}
       </head>
       <body>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         {children}
         <Analytics />
         <SpeedInsights />
