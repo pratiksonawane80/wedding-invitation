@@ -5,8 +5,8 @@ export const weddingData = {
     tagline: "Two souls, one journey",
     description:
       "We are getting married and we'd love for you to join us in celebrating our special day!",
-    manParents: "Son of Ms. Meenakshi & Mr. Rajkumar Sonawane",
-    womanParents: "Daughter of Ms. Sarika & Mr. Sanjay Shinde",
+    manParents: "Son of Mrs. Meenakshi & Mr. Rajkumar Sonawane",
+    womanParents: "Daughter of Mrs. Sarika & Mr. Sanjay Shinde",
   },
   weddingDate: "2026-05-01T12:30:00",
   welcomeMessage:
