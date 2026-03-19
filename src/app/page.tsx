@@ -3,15 +3,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LandingScreen from "@/components/LandingScreen";
 import FloatingPetals from "@/components/FloatingPetals";
-import ScrollMusicPlayer from "@/components/ScrollMusicPlayer";
+// import ScrollMusicPlayer from "@/components/ScrollMusicPlayer";
 import WelcomeSection from "@/components/WelcomeSection";
-import LoveStory from "@/components/LoveStory";
+// import LoveStory from "@/components/LoveStory";
 import EventsSection from "@/components/EventsSection";
 import VenueSection from "@/components/VenueSection";
-import GallerySection from "@/components/GallerySection";
+// import GallerySection from "@/components/GallerySection";
 import RSVPSection from "@/components/RSVPSection";
 import CountdownSection from "@/components/CountdownSection";
-import ShareSection from "@/components/ShareSection";
+// import ShareSection from "@/components/ShareSection";
 import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
