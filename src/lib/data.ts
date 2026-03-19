@@ -5,8 +5,8 @@ export const weddingData = {
     tagline: "Two souls, one journey",
     description:
       "We are getting married and we'd love for you to join us in celebrating our special day!",
-    manParents: "Son of Mr. & Mrs. Sonawane",
-    womanParents: "Daughter of Mr. & Mrs. Shinde",
+    manParents: "Son of Ms. Meenakshi & Mr. Rajkumar Sonawane",
+    womanParents: "Daughter of Ms. Sarika & Mr. Sanjay Shinde",
   },
   weddingDate: "2026-05-01T12:30:00",
   welcomeMessage:
@@ -90,7 +90,7 @@ export const weddingData = {
     {
       name: "Wedding Ceremony",
       date: "May 1, 2026",
-      time: "12:25 PM – 1:25 PM",
+      time: "12:25 PM",
       venue: "Grand Ballroom, Hyatt Place",
       description:
         "The sacred ceremony where two hearts become one. Your presence will make it even more special.",

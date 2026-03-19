@@ -42,19 +42,19 @@ export default function WelcomeSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <div className="text-center">
-            <p className="font-display text-3xl text-gold-600 dark:text-gold-300">
+            <p className="font-display text-4xl text-gold-600 dark:text-gold-300">
               {weddingData.couple.man}
             </p>
-            <p className="font-body text-sm text-gold-500/70 dark:text-gold-400/70 mt-1">
+            <p className="font-body text-md text-gold-500/70 dark:text-gold-400/70 mt-1">
               {weddingData.couple.manParents}
             </p>
           </div>
           <div className="font-display text-4xl text-gold-400">&</div>
           <div className="text-center">
-            <p className="font-display text-3xl text-gold-600 dark:text-gold-300">
+            <p className="font-display text-4xl text-gold-600 dark:text-gold-300">
               {weddingData.couple.woman}
             </p>
-            <p className="font-body text-sm text-gold-500/70 dark:text-gold-400/70 mt-1">
+            <p className="font-body text-md text-gold-500/70 dark:text-gold-400/70 mt-1">
               {weddingData.couple.womanParents}
             </p>
           </div>

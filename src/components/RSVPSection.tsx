@@ -127,13 +127,20 @@ export default function RSVPSection() {
               <input
                 type="tel"
                 required
+                maxLength={10}
+                pattern="[0-9]{10}"
                 className="rsvp-input"
                 style={{ colorScheme: "dark" }}
                 value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
-                placeholder="+91 98765 43210"
+                onChange={(e) => {
+                  const value = e.target.value;
+
+                  // Allow only digits and max 10 length
+                  if (/^\d{0,10}$/.test(value)) {
+                    setFormData({ ...formData, phone: value });
+                  }
+                }}
+                placeholder="9876543210"
                 id="rsvp-phone"
               />
             </div>
@@ -144,7 +151,7 @@ export default function RSVPSection() {
               </label>
               <select
                 className="rsvp-input appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em]"
-                style={{ 
+                style={{
                   colorScheme: "dark",
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4a017' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`
                 }}
@@ -174,11 +181,10 @@ export default function RSVPSection() {
                     onClick={() =>
                       setFormData({ ...formData, attending: val })
                     }
-                    className={`flex-1 py-3 rounded-xl font-heading text-sm transition-all duration-300 ${
-                      formData.attending === val
+                    className={`flex-1 py-3 rounded-xl font-heading text-sm transition-all duration-300 ${formData.attending === val
                         ? "bg-gold-500 text-white shadow-md"
                         : "bg-gold-50 dark:bg-gold-900/20 text-gold-600 dark:text-gold-300 hover:bg-gold-100 dark:hover:bg-gold-900/30"
-                    }`}
+                      }`}
                   >
                     {val === "yes"
                       ? "🎉 Joyfully Accept"
