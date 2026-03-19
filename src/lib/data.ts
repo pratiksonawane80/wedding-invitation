@@ -38,15 +38,15 @@ export const weddingData = {
     },
   ],
   events: [
-    {
-      name: "Mehendi",
-      date: "April 29, 2026",
-      time: "4:00 PM – 8:00 PM",
-      venue: "Groom's Residence, Devanagri",
-      description: "An evening of intricate henna art and delightful music.",
-      mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
-      emoji: "🌿",
-    },
+    // {
+    //   name: "Mehendi",
+    //   date: "April 29, 2026",
+    //   time: "4:00 PM – 8:00 PM",
+    //   venue: "Groom's Residence, Devanagri",
+    //   description: "An evening of intricate henna art and delightful music.",
+    //   mapLink: "https://maps.app.goo.gl/Wj8WR2YfsUcyRY439",
+    //   emoji: "🌿",
+    // },
     {
       name: "Ring Ceremony",
       date: "April 30, 2026",
