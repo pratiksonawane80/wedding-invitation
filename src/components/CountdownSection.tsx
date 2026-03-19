@@ -78,7 +78,7 @@ export default function CountdownSection() {
           Counting Down
         </h2>
         <div className="gold-divider" />
-        <p className="font-body text-base sm:text-lg text-gold-600/70 dark:text-gold-200/70 mt-4 mb-8 sm:mb-12">
+        <p className="font-body text-base sm:text-lg text-gold-900/80 dark:text-gold-200/70 mt-4 mb-8 sm:mb-12 font-medium">
           Until we say &ldquo;I Do&rdquo;
         </p>
 

@@ -30,7 +30,7 @@ export default function WelcomeSection() {
         </h2>
         <div className="gold-divider" />
 
-        <p className="font-body text-xl sm:text-2xl text-gold-800/80 dark:text-gold-100/90 leading-relaxed mt-8 px-4">
+        <p className="font-body text-xl sm:text-2xl text-gold-900 dark:text-gold-100/90 leading-relaxed mt-8 px-4">
           {weddingData.welcomeMessage}
         </p>
 
@@ -42,19 +42,19 @@ export default function WelcomeSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <div className="text-center">
-            <p className="font-display text-4xl text-gold-600 dark:text-gold-300">
+            <p className="font-display text-4xl text-gold-700 dark:text-gold-300">
               {weddingData.couple.man}
             </p>
-            <p className="font-body text-md text-gold-500/70 dark:text-gold-400/70 mt-1">
+            <p className="font-body text-md text-gold-800/90 dark:text-gold-200/90 mt-1 font-medium">
               {weddingData.couple.manParents}
             </p>
           </div>
-          <div className="font-display text-4xl text-gold-400">&</div>
+          <div className="font-display text-4xl text-gold-500">&</div>
           <div className="text-center">
-            <p className="font-display text-4xl text-gold-600 dark:text-gold-300">
+            <p className="font-display text-4xl text-gold-700 dark:text-gold-300">
               {weddingData.couple.woman}
             </p>
-            <p className="font-body text-md text-gold-500/70 dark:text-gold-400/70 mt-1">
+            <p className="font-body text-md text-gold-800/90 dark:text-gold-200/90 mt-1 font-medium">
               {weddingData.couple.womanParents}
             </p>
           </div>

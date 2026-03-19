@@ -59,51 +59,51 @@ export default function EventsSection() {
               <div className="gold-divider mb-4" />
 
               {/* Details */}
-              <div className="space-y-2 font-body text-gold-700/80 dark:text-gold-200/80">
-                <p className="flex items-center justify-center gap-2">
-                  <svg
-                    className="w-4 h-4 text-gold-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  {event.date}
-                </p>
-                <p className="flex items-center justify-center gap-2">
-                  <svg
-                    className="w-4 h-4 text-gold-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
-                  {event.time}
-                </p>
-                <p className="flex items-center justify-center gap-2 text-sm">
-                  <svg
-                    className="w-4 h-4 text-gold-500 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  {event.venue}
-                </p>
-              </div>
-
-              <p className="font-body text-sm text-gold-600/60 dark:text-gold-300/60 mt-4 italic">
-                {event.description}
+              <div className="space-y-2 font-body text-gold-900/90 dark:text-gold-100/90 font-medium">
+              <p className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-gold-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                {event.date}
               </p>
+              <p className="flex items-center justify-center gap-2">
+                <svg
+                  className="w-4 h-4 text-gold-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                {event.time}
+              </p>
+              <p className="flex items-center justify-center gap-2 text-sm">
+                <svg
+                  className="w-4 h-4 text-gold-600 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                {event.venue}
+              </p>
+            </div>
+
+            <p className="font-body text-base text-gold-800/90 dark:text-gold-200/90 mt-4 italic font-medium">
+              {event.description}
+            </p>
             </div>
           </motion.div>
         ))}

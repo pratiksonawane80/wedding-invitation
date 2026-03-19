@@ -45,7 +45,7 @@ export default function VenueSection() {
             <h3 className="font-heading text-3xl font-semibold text-gold-800 dark:text-gold-100 mb-2">
               {weddingData.venue.name}
             </h3>
-            <p className="font-body text-lg text-gold-600/70 dark:text-gold-200/70 mb-6">
+            <p className="font-body text-lg text-gold-900/90 dark:text-gold-200/90 mb-6 font-medium">
               {weddingData.venue.address}
             </p>
 
